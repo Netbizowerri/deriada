@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  color: #1B1B1B;
+  background-color: #F8F9FA;
+  overflow-x: hidden;
+}
+
+/* Custom Animation Classes */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, .3) 255, 050%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Float Animation Variant */
+.float-gentle {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #0F5132 0%, #198754 50%, #D4A017 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold Gradient */
+.gold-gradient {
+  background: linear-gradient(135deg, #D4A017 0%, #F4C430 50%, #D4A017 100%);
+}
+
+/* Section Padding */
+.section-padding {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 7rem 2rem;
+  }
+}
+
+/* Card Hover Effect */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  @apply bg-brand-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-brand-secondary transform scale-105;
+}
+
+.btn-secondary {
+  @apply bg-brand-accent text-brand-dark px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply transform scale-105 shadow-lg;
+}
+
+.btn-outline {
+  @apply border-2 border-brand-primary text-brand-primary px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+}
+
+.btn-outline:hover {
+  @apply bg-brand-primary text-white;
+}
+
+/* Navbar Styles */
+.navbar-scrolled {
+  @apply bg-white/95 backdrop-blur-md shadow-lg;
+}
+
+.navbar-transparent {
+  @apply bg-transparent;
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 81, 50, 0.95) 0%,
+    rgba(25, 135, 84, 0.9) 50%,
+    rgba(212, 160, 23, 0.85) 100%
+  );
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F5132;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #198754;
+}
+
+/* Focus Styles */
+input:focus,
+textarea:focus,
+select:focus {
+  @apply outline-none ring-2 ring-brand-accent;
+}
+
+/* Form Styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg bg-white transition-all duration-300;
+}
+
+.form-input:focus {
+  @apply border-brand-primary ring-2 ring-brand-accent/20;
+}
+
+/* Responsive Container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Stagger Animation Delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Image Placeholder */
+.img-placeholder {
+  @apply bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 flex items-center justify-center;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Service Card */
+.service-card {
+  @apply bg-white p-8 rounded-2xl shadow-lg card-hover;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-enter {
+  @apply opacity-0 -translate-y-4;
+}
+
+.mobile-menu-enter-active {
+  @apply opacity-100 translate-y-0 transition-all duration-300;
+}
+
+.mobile-menu-exit {
+  @apply opacity-100 translate-y-0;
+}
+
+.mobile-menu-exit-active {
+  @apply opacity-0 -translate-y-4 transition-all duration-300;
+}
